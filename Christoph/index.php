@@ -22,8 +22,6 @@
       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Last Name" name="lName"></input>
     </div>
     <div class="col-12 mb-5">
-
-    
       <button type="submit" class="btn btn-primary" name="submit">Submit</button>
     </div>
     </form>
@@ -122,6 +120,86 @@
       <button type="submit" class="btn btn-primary" name="submit">Submit</button>
     </div>
     </form>
+    </div>
+    <div>
+      <?php
+      $fname;
+      if( isset($_POST['submit']))
+       {
+           if(isset($_POST['fName'])) {
+             $fname = $_POST['fName'];
+             if(strlen($fname) > 5) {
+              echo "<p class='text-success text-center display-2'>" . $fname . "</p>";
+            }else {
+          echo "<p class='text-danger text-center display-2'>" . $fname . "</p>";
+        }
+           }else {
+             echo "<p class='text-danger text-center display-6'>ENTER FIRST NAME</p>";
+           }
+          }
+
+        
+      ?>
+    </div>
+    <div>
+      <?php
+      if( isset($_POST['submit']))
+       {
+           if(isset($_POST['lName'])) {
+             $lname = $_POST['lName'];
+             if(strlen($lname) > 5) {
+              echo "<p class='text-success text-center display-2'>" . $lname . "</p>";
+            }else {
+              echo "<p class='text-danger text-center display-2'>" . $lname . "</p>";
+            } 
+           }else {
+             echo "<p class='text-danger text-center display-6'>ENTER LAST NAME</p>";
+
+
+             
+           }
+          }
+        
+      ?>
+    </div>
+    <div>
+      <?php
+      if( isset($_POST['submit']))
+       {
+           if(isset($_POST['age'])) {
+             $age = $_POST['age'];
+             echo "<p class='text-center display-2'>" . $age . "</p>";
+           }else {
+             echo "<p class='text-danger text-center display-6'>ENTER AGE</p>";
+           }
+          }
+          
+      ?>
+    </div>
+
+    <div class="container d-flex flex-column justify-content-center align-items-center myCont">
+        <form method="POST">
+          <h1 class="display-1 mb-3">°F to °C Converter</h1>
+          <span class="display-6">Enter °F <input type="text" name="fahrenheit"></span>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary px-5 mt-3" name="submit">Submit</button>
+          </div>
+        </form>
+        <?php
+        function convert($param) {
+            $celsius = ($param - 32) * (5/9);
+            echo "<p class='mt-5 text-success display-2'>" . $param . "°F = " . $celsius . "°C.</p>";
+          }
+
+          if(isset($_POST['submit'])) {
+            if($_POST['fahrenheit']) {
+              $fahrenheit = $_POST['fahrenheit'];
+              convert($fahrenheit);
+            }else {
+              echo "<p class='text-danger text-center display-6 mt-3'>ENTER FAHRENHEIT</p>";
+            }
+          }
+        ?>
     </div>
 
  
