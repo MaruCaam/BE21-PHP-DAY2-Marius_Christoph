@@ -22,6 +22,8 @@
       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Last Name" name="lName"></input>
     </div>
     <div class="col-12 mb-5">
+
+    
       <button type="submit" class="btn btn-primary" name="submit">Submit</button>
     </div>
     </form>
